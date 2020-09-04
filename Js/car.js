@@ -12,7 +12,7 @@ class Car {
     }
     move(a, w, s, d){
         if(controler.key[a]) {
-            if(this.x>0) this.x -= this.speed;
+            if(this.x>137) this.x -= this.speed;
         }
         if(controler.key[w]) {
             if(this.y>0) this.y -= this.speed;
@@ -21,7 +21,7 @@ class Car {
             if(this.y<500-vehicleSize) this.y += this.speed;
         }
         if(controler.key[d]) {
-            if(this.x<600-vehicleSize) this.x += this.speed;
+            if(this.x<703-vehicleSize) this.x += this.speed;
         }
     }
 }

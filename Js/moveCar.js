@@ -21,6 +21,17 @@ function selectStop(evt){
 }
 function docReady(){
 
+    window.addEventListener('keydown', shotBullet);
     window.addEventListener('keydown', selectMove);
     window.addEventListener('keyup', selectStop);
+}
+let allBullets = [];
+
+function shotBullet(evt){
+    switch (evt.keyCode){
+        case 96:
+            allBullets.push(new Bullet(car.x+25, car.y));
+            break;
+        default: return;
+    }
 }

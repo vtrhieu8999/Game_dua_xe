@@ -6,43 +6,21 @@
 </head>
 <script src="Js/moveCar.js"></script>
 <body onload="docReady()">
-<canvas id="myCanvas" width="600" height="500" style="border:1px solid #000000;">
 
-</canvas>
-
+<div class="" id="main-wrapper">
+    <canvas id="myCanvas" width="840" height="500" style="border:1px solid #000000;"></canvas>
+</div>
 
 <h1 id="score">Your scores:</h1>
 
 
 </body>
-
+<script src="Js/basicFunction.js"></script>
+<script src="Js/background.js"></script>
 <script src="Js/car.js"></script>
+<script src="Js/bullet.js"></script>
 <script src="Js/circle.js"></script>
-<script>
-    let canvas = document.getElementById("myCanvas");
-    let score= +0;
-    document.getElementById('score').innerText= 'Your scores:'+ score;
-    let circles = [];
-    let car= new Car(300, 400, 'Img/car.png', 2);
-    function animation() {
-        let ctx = canvas.getContext("2d");
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        car.move(37, 38, 40, 39);
-        car.draw(canvas);
-        for (let i = 0; i < circles.length; i++) {
-            circles[i].move();
-            circles[i].draw(canvas);
-        }
+<script src="Js/singler_player.js">
 
-    }
-
-    function createCircle(number){
-        for (let i = 0; i < number; i++) {
-            let circle = new Circle(Math.random()*600,0,5+Math.floor(Math.random()*45),Math.random()+1);
-            circles.push(circle);
-        }
-    }
-    createCircle(9);
-    let timer =setInterval(animation,10);
 </script>
 </html>
