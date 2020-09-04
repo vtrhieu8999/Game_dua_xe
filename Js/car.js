@@ -18,10 +18,10 @@ class Car {
             if(this.y>0) this.y -= this.speed;
         }
         if(controler.key[s]) {
-            if(this.y<600-vehicleSize) this.y += this.speed;
+            if(this.y<500-vehicleSize) this.y += this.speed;
         }
         if(controler.key[d]) {
-            if(this.x<500-vehicleSize) this.x += this.speed;
+            if(this.x<600-vehicleSize) this.x += this.speed;
         }
     }
 }

@@ -22,7 +22,7 @@ class Circle {
         if(this.y - this.radius>= 500) {
             this.radius= 5+Math.floor(Math.random()*45);
             this.y= -this.radius;
-            this.x= Math.random()*500;
+            this.x= Math.random()*600;
             score++;
             document.getElementById('score').innerText= 'Your scores:'+ score;
         }
