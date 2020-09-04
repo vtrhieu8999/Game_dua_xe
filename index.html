@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Game</title>
+</head>
+<script src="moveCar.js"></script>
+<body onload="docReady()">
+<canvas id="myCanvas" width="600" height="500" style="border:1px solid #000000;">
+
+</canvas>
+
+
+<h1 id="score">Your scores:</h1>
+
+
+</body>
+
+<script src="car.js"></script>
+<script src="circle.js"></script>
+<script>
+    let canvas = document.getElementById("myCanvas");
+    let score= +0;
+    document.getElementById('score').innerText= 'Your scores:'+ score;
+    let circles = [];
+    let car= new Car(300, 400, 'car.png', 2);
+    function animation() {
+        let ctx = canvas.getContext("2d");
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        car.move(37, 38, 40, 39);
+        car.draw(canvas);
+        for (let i = 0; i < circles.length; i++) {
+            circles[i].move();
+            circles[i].draw(canvas);
+        }
+
+    }
+
+    function createCircle(number){
+        for (let i = 0; i < number; i++) {
+            let circle = new Circle(Math.random()*600,0,5+Math.floor(Math.random()*45),Math.random()+1);
+            circles.push(circle);
+        }
+    }
+    createCircle(9);
+    let timer =setInterval(animation,10);
+</script>
+</html>
